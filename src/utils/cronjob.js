@@ -51,13 +51,9 @@ cron.schedule("0 9 * * 1", async () => {
         `${sentCount} of your requests are still pending`,
       ]);
 
-      const subject = "DevRoot Weekly Reminder – See Who’s Interested in You!";
+      const subject = "DevRoot Weekly Reminder – See Who's Interested in You!";
 
-      await sendEmail.run(
-        "okVishesh360@gmail.com", //should be toAddress,
-        subject,
-        htmlTemplate
-      );
+      await sendEmail.run(email, subject, htmlTemplate);
     }
 
     console.log(`✅ Weekly reminder sent to ${userEmailMap.size} users`);

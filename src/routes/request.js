@@ -94,11 +94,7 @@ requestRouter.post(
           toUser
         );
 
-        const emailRes = await sendEmail.run(
-          "okVishesh360@gmail.com", //should be toAddress
-          subject,
-          htmlTemplate
-        );
+        const emailRes = await sendEmail.run(toAddress, subject, htmlTemplate);
         console.log("Email Sent:", emailRes);
         return res
           .status(200)
